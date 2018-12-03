@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+  <title>Movie Catalog</title>
+</head>
+
+<body>
+  <header>
+    <section class="container">
+      <div class="pagetitle"><h1>Movie Catalog</h1></div>
+      <div class="logout"><a class="black" href="{{url_for('gdisconnect')}}"><h2> logout</h2></a></div>
+    </section>
+  </header>
+  <div class="inputform">
+    <h1>Edit Category </h1>
+
+    <form action="{{ url_for('editCategory', category_id = category.id)}}" method="post">
+      <p>Category Name:</p>
+      <input type = 'text' size='40' name='name' placeholder='{{category.name}}'>
+      <input type='submit' value='Submit'>
+      <a href = '{{url_for('showCategory')}}'>Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

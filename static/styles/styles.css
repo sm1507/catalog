@@ -1,0 +1,108 @@
+/* Flexbox wrap for all box formats */
+.container {
+  box-sizing: border-box;
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+  }
+
+.categorybox {
+  width: 30%;
+  padding: 15px;
+  margin-left: 2em;
+
+}
+
+.moviebox {
+  width:60%;
+  padding: 15px;
+}
+
+.pagetitle {
+  text-align: left;
+  padding-left: 2em;
+  flex-wrap: wrap;
+  width: 70%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.logout {
+  text-align: right;
+  flex-wrap: wrap;
+  width: 20%;
+  padding-right: 2em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.verticalline {
+  border-left: 3px solid #f2f2f7;
+  height: 500px;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+body {
+  background: #e1e5ed;
+  margin: 0;
+}
+
+header {
+  background: #0072c6;
+  padding: 0;
+  margin: 0;
+}
+ .gray {
+   color: gray;
+ }
+
+.black {
+  color: black;
+}
+
+.indent {
+  text-indent: 20px;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.font16em {
+  font-size: 1.6em;
+}
+
+.font12em {
+  font-size: 1.2em;
+}
+
+.inputform {
+  padding-left: 2em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.input {
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  height: 200px;
+  width: 600px;
+  padding-left:0;
+  padding-top:0;
+  padding-bottom:0.4em;
+  padding-right: 0.4em;
+}
+
+.deletebutton {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+header::after {
+  content: "";
+  display: flex;
+  margin-top: .5em;
+  height: 3px;
+  background: black;
+}

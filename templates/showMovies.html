@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+  <title>Movie Catalog</title>
+</head>
+
+<body>
+  <header>
+    <section class="container">
+      <div class="pagetitle"><h1>Movie Catalog</h1></div>
+      <div class="logout">
+        <a class="black" href = "{{url_for('showCategory')}}"><h2>home</a> |
+        <a class="black" href="{{url_for('gdisconnect')}}"> logout</h2></a></div>
+    </section>
+  </header>
+
+  <section class="container">
+    <div class="categorybox">
+
+      <h1>All {{ category.name }} Movies</h1>
+
+      <a href = "{{url_for('addMovie', category_id = category.id)}}">Add a New Movie</a>
+    </div>
+    <div class="verticalline moviebox">
+      {% if movies != [] %}
+      <br>
+        {% for movie in movies %}
+          <p><b><h3>{{ movie.title }}</h3></b></p>
+          <p class="indent">{{ movie.description }}</p>
+          <p class="indent" >
+            <a href="{{url_for('editMovie', category_id = category.id, movie_id = movie.id)}}">
+            <i>(edit</i></a> |
+            <a href="{{url_for('deleteMovie', category_id = category.id, movie_id = movie.id)}}">
+            <i>delete)</i></a>
+          </p>
+        {% endfor %}
+      {% else %}
+      <p>There are no movies in the datase</p>
+      {% endif %}
+    </div>
+  </section>
+</body>
+</html>
